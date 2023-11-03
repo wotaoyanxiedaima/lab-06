@@ -43,14 +43,14 @@ diamonds <- diamonds %>%
   mutate(table_mm = table_pct * width_mm / 100)
 
 # Overall table_mm arithmetic mean?
-
+mean(diamonds$length_mm)
 
 
 
 
 
 # table_mm arithmetic mean within each clarity category
-
+aggregate(table_mm ~ clarity, data = diamonds, FUN = mean)
 
 
 
@@ -58,7 +58,7 @@ diamonds <- diamonds %>%
 
 ```
 
-_Add your comment here_
+The higher the clarity, the higher average table length of the diamond.
 
 ## Exercise 3
 

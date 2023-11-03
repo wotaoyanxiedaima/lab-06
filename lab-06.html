@@ -379,14 +379,21 @@ library(ggplot2)</code></pre>
   mutate(table_mm = table_pct * width_mm / 100)
 
 # Overall table_mm arithmetic mean?
-
-
-
-
-
-
-# table_mm arithmetic mean within each clarity category</code></pre>
-<p><em>Add your comment here</em></p>
+mean(diamonds$length_mm)</code></pre>
+<pre><code>## [1] 5.731157</code></pre>
+<pre class="r"><code># table_mm arithmetic mean within each clarity category
+aggregate(table_mm ~ clarity, data = diamonds, FUN = mean)</code></pre>
+<pre><code>##   clarity table_mm
+## 1      I1 3.911404
+## 2     SI2 3.709312
+## 3     SI1 3.398883
+## 4     VS2 3.253427
+## 5     VS1 3.202409
+## 6    VVS2 2.984993
+## 7    VVS1 2.830968
+## 8      IF 2.824015</code></pre>
+<p>The higher the clarity, the higher average table length of the
+diamond.</p>
 </div>
 <div id="exercise-3" class="section level2">
 <h2>Exercise 3</h2>
